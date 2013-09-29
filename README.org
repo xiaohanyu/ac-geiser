@@ -14,42 +14,21 @@ displayed.
 
 First, ensure =auto-complete= and =geiser= are installed.
 
-You'll need both =auto-complete= and =geiser= to be enabled and working, so
-please consult the corresponding documentation if you have any trouble with
-this.
+You'll need both =auto-complete= and =geiser= to be enabled and working, I
+recommend using a Emacs package manager, either the builtin =package.el= or the
+more flexible =el-get=. For =package.el=, [[http://marmalade-repo.org/][Marmalade]] and [[http://melpa.milkbox.net/][Mepla]] is your good
+friends. Please consult the corresponding documentation if you have any trouble
+with this.
 
-Next, install =ac-geiser=. Here is one possible way:
-
-#+BEGIN_SRC sh
-git clone git@github.com:xiaohanyu/ac-geiser.git
-#+END_SRC
-
-Then put necessary code to your =.emacs= file:
+Next, install =ac-geiser=. Again, you can install it by =package.el= or
+=el-get=. After installation, put necessary code to your =.emacs= file:
 
 #+BEGIN_SRC emacs-lisp
-  (add-to-list 'load-path (expand-file-name
-                           "/your/path/to/ac-geiser"))
   (require 'ac-geiser)
   (add-hook 'geiser-mode-hook 'ac-geiser-setup)
   (add-hook 'geiser-repl-mode-hook 'ac-geiser-setup)
   (eval-after-load "auto-complete"
     '(add-to-list 'ac-modes 'geiser-repl-mode))
-#+END_SRC
-
-If you use [[https://github.com/dimitri/el-get][el-get]], you can install =ac-geiser= in the following way:
-
-#+BEGIN_SRC emacs-lisp
-  (setq el-get-sources
-        '((:name ac-geiser
-                 :description "Emacs auto-complete backend for geiser"
-                 :type github
-                 :pkgname "xiaohanyu/ac-geiser"
-                 :depends (auto-complete geiser)
-                 :features ac-geiser
-                 :after (progn
-                          (ome-ac-geiser-setup)))))
-
-  (el-get 'sync (mapcar 'el-get-source-name el-get-sources))
 #+END_SRC
 
 * Usage
@@ -65,7 +44,3 @@ symbol should also be displayed.
 Screenshots:
 
 [[http://img3.douban.com/view/photo/large/public/p2151078655.jpg]]
-
-* Todo
-- Add =ac-geiser= to [[http://marmalade-repo.org/][Marmalade]] and [[http://melpa.milkbox.net/][Melpa]]
-- Add =ac-geiser= to [[https://github.com/dimitri/el-get][el-get]]

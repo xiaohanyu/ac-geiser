@@ -1,10 +1,10 @@
-;;; ac-geiser.el --- An auto-complete source using geiser completions
+;;; ac-geiser.el --- Emacs auto-complete backend for geiser.
 
 ;; Copyright (C) 2013  Xiao Hanyu <xiaohanyu1988@gmail.com>
 
 ;; Author: Xiao Hanyu <xiaohanyu1988@gmail.com>
 ;; URL: https://github.com/xiaohanyu/ac-geiser
-;; Version: DEV
+;; Version: 0.1
 ;; Package-Requires: ((geiser "0.5") (auto-complete "1.4"))
 
 ;; This program is free software; you can redistribute it and/or
@@ -32,6 +32,8 @@
 ;;     (eval-after-load "auto-complete"
 ;;       '(add-to-list 'ac-modes 'geiser-repl-mode))
 ;;
+
+;; Code goes here
 
 (eval-when-compile (require 'cl))
 (require 'geiser)
