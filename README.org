@@ -43,4 +43,4 @@ symbol should also be displayed.
 
 Screenshots:
 
-[[http://img3.douban.com/view/photo/large/public/p2151078655.jpg]]
+[[file:screenshot.png]]
